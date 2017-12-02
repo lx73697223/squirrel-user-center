@@ -17,7 +17,7 @@
 
     <modules>
         <module>squirrel-user-account-service</module>
-        <module>squirrel-usercenter-endpoint-interface</module>
+        <module>squirrel-user-account-endpoint-intf</module>
     </modules>
 
     <build>

@@ -1,7 +1,7 @@
-package com.pi.client.usercenter.endpoint.intf;
+package com.pi.usercenter.endpoint.intf;
 
-import com.pi.client.usercenter.endpoint.intf.hystrix.UserAccountClientHystrix;
-import com.pi.client.usercenter.endpoint.vo.UserAccountVo;
+import com.pi.usercenter.endpoint.intf.hystrix.UserAccountClientHystrix;
+import com.pi.usercenter.endpoint.vo.UserAccountVo;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

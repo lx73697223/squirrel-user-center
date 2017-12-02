@@ -1,4 +1,4 @@
-package com.pi.usercenter.account;
+package com.pi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;

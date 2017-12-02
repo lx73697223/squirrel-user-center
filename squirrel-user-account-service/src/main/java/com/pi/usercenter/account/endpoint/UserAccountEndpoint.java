@@ -1,8 +1,7 @@
 package com.pi.usercenter.account.endpoint;
 
-import com.pi.client.usercenter.endpoint.intf.UserAccountClient;
-import com.pi.client.usercenter.endpoint.vo.UserAccountVo;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.pi.usercenter.endpoint.intf.UserAccountClient;
+import com.pi.usercenter.endpoint.vo.UserAccountVo;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;

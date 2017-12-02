@@ -1,7 +1,7 @@
-package com.pi.client.usercenter.endpoint.intf.hystrix;
+package com.pi.usercenter.endpoint.intf.hystrix;
 
-import com.pi.client.usercenter.endpoint.intf.UserAccountClient;
-import com.pi.client.usercenter.endpoint.vo.UserAccountVo;
+import com.pi.usercenter.endpoint.intf.UserAccountClient;
+import com.pi.usercenter.endpoint.vo.UserAccountVo;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;

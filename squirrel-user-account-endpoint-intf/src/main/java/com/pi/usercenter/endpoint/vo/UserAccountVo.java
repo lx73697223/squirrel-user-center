@@ -1,4 +1,4 @@
-package com.pi.client.usercenter.endpoint.vo;
+package com.pi.usercenter.endpoint.vo;
 
 import lombok.Data;
 
