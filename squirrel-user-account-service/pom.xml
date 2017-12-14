@@ -26,10 +26,10 @@
             <groupId>com.pipi</groupId>
             <artifactId>squirrel-common-jackson</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.pipi</groupId>-->
-            <!--<artifactId>squirrel-common-persistence</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.pipi</groupId>
+            <artifactId>squirrel-common-persistence</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.pipi</groupId>
             <artifactId>squirrel-common-autoconfigure</artifactId>
@@ -43,6 +43,12 @@
             <artifactId>squirrel-user-account-endpoint-intf</artifactId>
         </dependency>
         <!-- squirrel end -->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>
