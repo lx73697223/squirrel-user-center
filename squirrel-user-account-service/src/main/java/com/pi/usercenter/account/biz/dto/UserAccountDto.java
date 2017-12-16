@@ -1,4 +1,4 @@
-package com.pi.usercenter.account.dto;
+package com.pi.usercenter.account.biz.dto;
 
 import lombok.Data;
 

@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringCloudApplication
 @EnableFeignClients
-@MapperScan("com.pi.usercenter.account.mapper")
+@MapperScan("com.pi.usercenter.account.dao.mapper")
 public class SquirrelUserAccountApplication {
 
     public static void main(String[] args) {
