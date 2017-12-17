@@ -18,10 +18,10 @@ import java.util.Set;
 @Qualifier("userAccountClient")
 public interface UserAccountClient {
 
-    @GetMapping(value = "/userAccounts", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiImplicitParam(value = "根据id查询用户账号", dataType = "long", example = "1,2,3", allowMultiple = true, required = true)
+    @ApiImplicitParam(value = "根据id查询用户账号", example = "1,2,3", allowMultiple = true, required = true)
     @LogMethodReturn(level = LogMethodReturn.Level.INFO)
-    ResponseEntity<List<UserAccountVo>> getUserAccounts(@RequestParam("ids") Set<Long> ids);
+    @GetMapping(value = "/userAccounts", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    ResponseEntity<List<UserAccountVo>> getUserAccounts(@RequestParam("ids") Set<String> ids);
 
 }
 

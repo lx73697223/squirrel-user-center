@@ -24,7 +24,7 @@
     <root level="INFO">
         <appender-ref ref="stdout"/>
     </root>
-    <logger name="com.pi" level="INFO" additivity="false">
+    <logger name="com.pi" level="INFO">
         <appender-ref ref="file"/>
     </logger>
     <logger name="com.pi.usercenter.account.dao.mapper" level="DEBUG" additivity="false">

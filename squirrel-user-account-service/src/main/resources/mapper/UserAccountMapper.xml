@@ -7,19 +7,33 @@
     </sql>
 
     <sql id="Columns">
-      id,
-      username,
-      nick,
-      phone
+        unique_id
+      , username
+      , nick
+      , gender
+      , phone
     </sql>
 
     <select id="findByIds" resultType="UserAccount">
         SELECT <include refid="Columns" />
           FROM <include refid="TableName" />
-         WHERE id IN
-         <foreach collection="ids" item="id" open="(" close=")" separator=",">
+         WHERE unique_id IN
+         <foreach item="id" collection="ids" open="(" close=")" separator=",">
              #{id}
          </foreach>
     </select>
+
+    <insert id="saveBatch">
+        INSERT INTO <include refid="TableName" />
+          ( <include refid="Columns" /> )
+        VALUES
+        <foreach item="item" collection="list" separator=",">
+          (  #{item.uniqueId}
+            ,#{item.username}
+            ,#{item.nick}
+            ,#{item.gender}
+            ,#{item.phone} )
+        </foreach>
+    </insert>
 
 </mapper>

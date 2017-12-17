@@ -1,4 +1,4 @@
-package com.pi.usercenter.account.enums;
+package com.pi.usercenter.enums;
 
 import com.pi.common.utils.enums.NamedEnumEntity;
 

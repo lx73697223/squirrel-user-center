@@ -13,9 +13,9 @@ import java.util.Set;
 @Component
 public class UserAccountClientHystrix implements UserAccountClient {
 
-    public ResponseEntity<List<UserAccountVo>> getUserAccounts(Set<Long> ids) {
+    public ResponseEntity<List<UserAccountVo>> getUserAccounts(Set<String> ids) {
         UserAccountVo mockUserVo = new UserAccountVo();
-        mockUserVo.setId(0L);
+        mockUserVo.setUniqueId("0");
         mockUserVo.setNick("p");
         mockUserVo.setUsername("i");
         mockUserVo.setPhone("00000000000");
