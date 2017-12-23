@@ -15,4 +15,6 @@ public class UserAccountVo extends UniqueIdEntity {
 
     private String phone;
 
+    private String password;
+
 }

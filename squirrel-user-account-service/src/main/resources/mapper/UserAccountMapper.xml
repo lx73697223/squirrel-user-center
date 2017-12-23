@@ -12,6 +12,7 @@
       , nick
       , gender
       , phone
+      , password
     </sql>
 
     <select id="findByIds" resultType="UserAccount">
@@ -23,16 +24,32 @@
          </foreach>
     </select>
 
+    <select id="find" resultType="UserAccount">
+        SELECT <include refid="Columns" />
+          FROM <include refid="TableName" />
+        <where>
+            <if test="pojo.usernames != null and pojo.usernames.size > 0">
+                AND username IN
+                <foreach item="username" collection="pojo.usernames" open="(" close=")" separator=",">
+                  #{username}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
     <insert id="saveBatch">
         INSERT INTO <include refid="TableName" />
           ( <include refid="Columns" /> )
         VALUES
         <foreach item="item" collection="list" separator=",">
-          (  #{item.uniqueId}
-            ,#{item.username}
-            ,#{item.nick}
-            ,#{item.gender}
-            ,#{item.phone} )
+        (
+            #{item.uniqueId}
+          , #{item.username}
+          , #{item.nick}
+          , #{item.gender}
+          , #{item.phone}
+          , #{item.password}
+        )
         </foreach>
     </insert>
 

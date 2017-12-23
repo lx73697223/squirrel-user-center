@@ -15,4 +15,6 @@ public class UserAccountDto extends UniqueIdEntity {
 
     private String phone;
 
+    private String password;
+
 }

@@ -13,6 +13,7 @@ import java.util.Set;
 @Component
 public class UserAccountClientHystrix implements UserAccountClient {
 
+    @Override
     public ResponseEntity<List<UserAccountVo>> getUserAccounts(Set<String> ids) {
         UserAccountVo mockUserVo = new UserAccountVo();
         mockUserVo.setUniqueId("0");
@@ -21,6 +22,12 @@ public class UserAccountClientHystrix implements UserAccountClient {
         mockUserVo.setPhone("00000000000");
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
                 Collections.singletonList(mockUserVo));
+    }
+
+    @Override
+    public UserAccountVo getUserAccountByUsername(String username) {
+        UserAccountVo mockUserVo = new UserAccountVo();
+        return mockUserVo;
     }
 
 }

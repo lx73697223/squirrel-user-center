@@ -3,6 +3,9 @@ package com.pi.usercenter.account.dao.mapper;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.pi.common.test.DaoTests;
+import com.pi.common.utils.core.sequence.SnowflakeIdGenerator;
+import com.pi.common.utils.core.sequence.UniqueIdGenerator;
+import com.pi.usercenter.account.biz.pojo.UserAcountQueryPojo;
 import com.pi.usercenter.account.dao.entity.UserAccount;
 import com.pi.usercenter.enums.UserGender;
 import org.junit.Test;
@@ -15,11 +18,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class UserAccountMapperTest extends DaoTests {
 
+    public static UniqueIdGenerator UniqueIdGenerator = new SnowflakeIdGenerator(1);
+
     @Autowired
     private UserAccountMapper userAccountMapper;
-
-    //    @Autowired
-    //    private UniqueIdGenerator uniqueIdGenerator;
 
     @Test
     public void findByIds() {
@@ -28,9 +30,18 @@ public class UserAccountMapperTest extends DaoTests {
     }
 
     @Test
+    public void find() {
+        UserAcountQueryPojo pojo = new UserAcountQueryPojo();
+        pojo.setUsernames(Sets.newHashSet("squirrel01", "squirrel03"));
+
+        List<UserAccount> list = userAccountMapper.find(pojo, null);
+        assertThat(list).hasSize(2);
+    }
+
+    @Test
     @DirtiesContext
     public void saveBatch() {
-        long uniqueId = 100L; /*uniqueIdGenerator.next();*/
+        long uniqueId = UniqueIdGenerator.next();
         UserAccount userAccount = new UserAccount();
         userAccount.setUniqueId(uniqueId);
         userAccount.setGender(UserGender.FEMALE);
