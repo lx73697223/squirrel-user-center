@@ -44,5 +44,8 @@ target/
 test-output/
 bin/
 
+# H2
+trace.db/
+
 # Others
 source/src/main/resources/.h2.server.properties

@@ -1,20 +1,23 @@
 package com.pi.usercenter.account.endpoint;
 
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.pi.common.utils.core.sequence.UniqueIdGenerator;
 import com.pi.usercenter.account.biz.UserAccountManagementService;
 import com.pi.usercenter.account.biz.dto.UserAccountDto;
 import com.pi.usercenter.endpoint.intf.UserAccountClient;
 import com.pi.usercenter.endpoint.vo.UserAccountVo;
-import ma.glasnost.orika.MapperFacade;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.Set;
+import ma.glasnost.orika.MapperFacade;
 
 @RestController
 public class UserAccountEndpoint implements UserAccountClient {
@@ -35,7 +38,7 @@ public class UserAccountEndpoint implements UserAccountClient {
     }
 
     @Override
-    public UserAccountVo getUserAccountByUsername(@RequestParam("username") String username) {
+    public UserAccountVo getUserAccountByUsername(@PathVariable("username") String username) {
         UserAccountDto userAccountDto = userAccountManagementService.findByUsername(username, null);
         return beanMapper.map(userAccountDto, UserAccountVo.class);
     }
